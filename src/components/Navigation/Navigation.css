@@ -1,0 +1,42 @@
+.NavBar{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+h2{
+    color: black;
+    font-size: medium;
+    font-weight: normal;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+}
+
+#MainLogo{
+    margin: 0;
+    width:90%;
+    height:auto;
+    align-self: center;
+}
+
+#linkLogo{
+    height: 60px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+a{
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    display: flex;
+    text-decoration:none;
+}
+
+img{
+    margin: 0;
+}
