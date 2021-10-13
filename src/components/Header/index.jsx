@@ -11,7 +11,6 @@ function Header({ setToken }) {
     const { userData } = useContext(userDataContext);
 
     const disconnect = () => {
-        //sessionStorage.clear()
         const token = {token: null};
         setToken(token);
     }
@@ -29,7 +28,7 @@ function Header({ setToken }) {
             <h1 id="HeaderTitle">Welcome to my application</h1>
             <div className="Profile" onClick={showMenu}>
                 <span className="userInfo">{"Connecté en tant que : " + userData?.contact }</span>
-                <span className="userInfo">{userData?.isAdmin ===1 ? " (Administrateur)" : "(Utilisateur)"}</span>
+                <span className="BolduserInfo">{userData?.isAdmin ? "(Administrateur)" : "(Utilisateur)"}</span>
                 <img id="profilePic" src={profilePic} alt="Profile" />
             </div>
         </div>

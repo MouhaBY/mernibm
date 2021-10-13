@@ -50,6 +50,14 @@ span{
     font-weight: normal;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.BolduserInfo{
+    align-self: center;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 .Dropdown{
     width: auto;

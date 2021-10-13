@@ -19,8 +19,7 @@ function EditUser(){
         getUser(userId).then(result =>{
             setUsername(result.username);
             setContact(result.contact);
-            if (result.isAdmin === 0){ setIsAdmin(false);}
-            else { setIsAdmin(true) }
+            setIsAdmin(result.isAdmin)
         })
     }
 

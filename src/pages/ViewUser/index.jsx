@@ -16,8 +16,7 @@ function ViewUser(){
         getUser(userId).then(result =>{
             setUsername(result.username);
             setContact(result.contact);
-            if (result.isAdmin === 0){ setIsAdmin(false);}
-            else { setIsAdmin(true) }
+            setIsAdmin(result.isAdmin)
         })
     }
 
@@ -32,6 +31,7 @@ function ViewUser(){
                     <input id="backButton" type="button" value="Retour" onClick={navigateToUsers}/>
                 </div>
             <form className="viewformContainer">
+                <h2 className="ViewUserTitle">Consultation</h2>
                 <label className="viewformTitle">Utilisateur Id</label>
                 <input className="viewInput" type="text" name="Id" id="id" disabled value={id} />
                 <label className="viewformTitle" for="username">Nom d'utilisateur</label>
