@@ -9,7 +9,6 @@ function Header({ setToken }) {
     const [showDropdown, setShowDropdown] = useState(false);
     const { toggleShowBar } = useContext(showBarContext);
     const { userData } = useContext(userDataContext);
-    
 
     const disconnect = () => {
         //sessionStorage.clear()
@@ -36,7 +35,12 @@ function Header({ setToken }) {
         </div>
         {showDropdown ? (
         <div className="Dropdown">
-            <input id="DisconnectButton" type="button" onClick={disconnect} value="Se déconnecter"/>
+            <div id="DropDownButton" type="button">
+                <a className="DropDownText" href={'/users/view/'+ userData?._id}>Mon compte</a>
+            </div>
+            <div id="DropDownButton" type="button" onClick={disconnect}>
+                <span className="DropDownText">Se déconnecter</span>
+            </div>
         </div>)
         :( null )}
         </div>

@@ -12,6 +12,7 @@ import Users from '../Users';
 import AddUser from '../AddUser';
 import EditUser from '../EditUser';
 import Datas from '../Datas';
+import ViewUser from '../ViewUser';
 import { ShowBarProvider, userDataContext } from '../../utils/context';
 import { useEffect } from 'react';
 import { getUser } from '../../WS/API';
@@ -68,6 +69,9 @@ function Main({ setToken }){
                             </Route>
                             <Route exact path="/users/edit/:id">
                                 <EditUser />
+                            </Route>
+                            <Route exact path="/users/view/:id">
+                                <ViewUser />
                             </Route>
                             <Route>
                                 <Error />

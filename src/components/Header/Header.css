@@ -52,31 +52,40 @@ span{
 }
 
 .Dropdown{
-    width: 140px;
-    height: 90px;
-    background-color: lightgray;
+    width: auto;
+    height: auto;
+    background-color: white;
     position: absolute;
     right:0;
+    padding: 8px;
     display: flex;
     margin-right: 5px;
     align-items: center;
     justify-content: center;
-    border-width: 1px;
-    border-style:solid;
-    border-color: #F4F4F8;
+    flex-direction: column;
+    /*border-width: 1px;
+    border-style:solid;*/
+    /*border-color: #F4F4F8;*/
+    box-shadow: 0 0 13px -3px rgb(0 0 0 / 10%);
+    border: 1px solid rgba(182,182,182,.1);
 }
 
-#DisconnectButton{
-    border-color: white;
-    background-color: red;
-    border-width: 1px;
-    border-style:solid;
-    width: 100px;
-    height: 30px;
+#DropDownButton{
+    border: 0px;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: #DADAE7;
+    width: 150px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    
+}
+
+.DropDownText{
+    color: black;
+    font-size: 14px;
     font-weight: normal;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

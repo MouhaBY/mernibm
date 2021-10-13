@@ -1,6 +1,8 @@
 import './DataTable.css';
+import checked from '../../assets/check.png';
+import unchecked from '../../assets/uncheck.png';
 
-function DataTable({title, headers, datas, edit, editFunction, deletion, deleteFunction, viewFunction, isAdmin}){
+function DataTable({ title, headers, datas, edit, editFunction, deletion, deleteFunction, view, viewFunction }){
     return(
         <div className="DataTableContainer">
             <h2 className="DataTabletitle">{title}</h2>
@@ -15,15 +17,19 @@ function DataTable({title, headers, datas, edit, editFunction, deletion, deleteF
                  {datas && datas.map((data) => (
                     <tr key={data._id}>
                         {headers.map((head) => (
-                            (head.reference === "actions") ?
+                            (head?.type === "actions") ?
                             <div key={data._id} className="Buttons">
-                                <input id="viewButton" type="button" value="Consuler" onClick={()=>{ viewFunction(data) }}/>
-                                { edit && isAdmin &&
+                                { view &&
+                                <input id="viewButton" type="button" value="Consuler" onClick={()=>{ viewFunction(data) }}/>}
+                                { edit && 
                                 <input id="editButton" type="button" value="Modifier" onClick={()=>{ editFunction(data) }}/>}
-                                { deletion && isAdmin &&
+                                { deletion &&
                                 <input id="deleteButton" type="button" value="Supprimer" onClick={() => { deleteFunction(data) }}/>}
                             </div> :
-                            <td key={head.reference} className="Cell">{data[head.reference]}</td>
+                            <td key={head.reference} className="Cell">{
+                                head.type === "bool" ? <img id="checked" src={ data[head.reference] ? checked : unchecked } alt="checked" />
+                                : data[head.reference]
+                            }</td>
                         ))}
                     </tr>
                     ))}
